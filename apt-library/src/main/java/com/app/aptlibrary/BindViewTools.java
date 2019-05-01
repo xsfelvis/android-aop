@@ -6,10 +6,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * @author：xinyu.zhou
+ * @author：xsf
  * @version: 2018/9/18 14:22
- * @ClassName:
- * @Description: ${todo}(这里用一句话描述这个类的作用)
+ * @Description:
  */
 public class BindViewTools {
     public static void bind(Activity activity) {

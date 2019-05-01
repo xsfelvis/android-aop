@@ -8,22 +8,21 @@ import org.gradle.api.Project
 import static org.codehaus.groovy.runtime.DefaultGroovyMethods.println
 
 /**
- * @author：xinyu.zhou
+ * @author：xsf
  * @version: 2018/9/19
- * @ClassName:
- * @Description: ${todo}(这里用一句话描述这个类的作用)
+ * @Description:
  */
-public class MyInjects {
+public class TestInjects {
     //初始化类池
-    private final static ClassPool pool = ClassPool.getDefault();
+    private final static ClassPool pool = ClassPool.getDefault()
 
     public static void inject(String path, Project project) {
         //将当前路径加入类池,不然找不到这个类
-        pool.appendClassPath(path);
+        pool.appendClassPath(path)
         //project.android.bootClasspath 加入android.jar，不然找不到android相关的所有类
-        pool.appendClassPath(project.android.bootClasspath[0].toString());
+        pool.appendClassPath(project.android.bootClasspath[0].toString())
         //引入android.os.Bundle包，因为onCreate方法参数有Bundle
-        pool.importPackage("android.os.Bundle");
+        pool.importPackage("android.os.Bundle")
 
         File dir = new File(path);
         if (dir.isDirectory()) {
@@ -34,7 +33,7 @@ public class MyInjects {
                 if (file.getName().equals("MainActivity.class")) {
 
                     //获取MainActivity.class
-                    CtClass ctClass = pool.getCtClass("com.zxy.aop.MainActivity");
+                    CtClass ctClass = pool.getCtClass("com.xsfdev.aop.MainActivity")
                     println("ctClass = " + ctClass)
                     //解冻
                     if (ctClass.isFrozen())
@@ -46,11 +45,11 @@ public class MyInjects {
                     println("方法名 = " + ctMethod)
 
 
-                    String insetBeforeStr = """ android.widget.Toast.makeText(this,"WTF emmmmmmm.....我是被插入的Toast代码~!!",android.widget.Toast.LENGTH_LONG).show();
+                    String insetBeforeStr = """ android.widget.Toast.makeText(this,"Javassit插入Toast!!",android.widget.Toast.LENGTH_LONG).show();
                                                 """
                     //在方法开头插入代码
 
-                    ctMethod.insertBefore(insetBeforeStr);
+                    ctMethod.insertBefore(insetBeforeStr)
                     ctClass.writeFile(path)
                     ctClass.detach()//释放
                 }

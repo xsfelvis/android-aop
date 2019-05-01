@@ -6,10 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author：xinyu.zhou
+ * @author：xsf
  * @version: 2018/9/13
- * @ClassName:
- * @Description: ${todo}(这里用一句话描述这个类的作用)
+ * @Description:
  */
 
 @Retention(RetentionPolicy.CLASS)

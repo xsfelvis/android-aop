@@ -7,17 +7,17 @@ import org.apache.commons.io.FileUtils
 import org.gradle.api.Project
 
 /**
- * @author：xinyu.zhou
+ * @author：xsf
  * @version: 2018/9/19
  * @ClassName:
  * @Description: ${todo}(这里用一句话描述这个类的作用)
  */
 public class JavassistTransform extends Transform {
 
-    private Project mProject;
+    private Project mProject
 
     public JavassistTransform(Project p) {
-        this.mProject = p;
+        this.mProject = p
     }
 
     //transform的名称
@@ -25,14 +25,14 @@ public class JavassistTransform extends Transform {
     //transformClassesWith + getName() + For + Debug或Release
     @Override
     public String getName() {
-        return "JavassistTransform";
+        return "JavassistTransform"
     }
 
     //需要处理的数据类型，有两种枚举类型
     //CLASSES和RESOURCES，CLASSES代表处理的java的class文件，RESOURCES代表要处理java的资源
     @Override
     public Set<QualifiedContent.ContentType> getInputTypes() {
-        return TransformManager.CONTENT_CLASS;
+        return TransformManager.CONTENT_CLASS
     }
 
     //    指Transform要操作内容的范围，官方文档Scope有7种类型：
@@ -46,13 +46,13 @@ public class JavassistTransform extends Transform {
 //    TESTED_CODE                   由当前变量(包括依赖项)测试的代码
     @Override
     public Set<QualifiedContent.Scope> getScopes() {
-        return TransformManager.SCOPE_FULL_PROJECT;
+        return TransformManager.SCOPE_FULL_PROJECT
     }
 
     //指明当前Transform是否支持增量编译
     @Override
     public boolean isIncremental() {
-        return false;
+        return false
     }
 
 //    Transform中的核心方法，
@@ -64,13 +64,13 @@ public class JavassistTransform extends Transform {
                           Collection<TransformInput> referencedInputs,
                           TransformOutputProvider outputProvider,
                           boolean isIncremental) throws IOException, TransformException, InterruptedException {
-        System.out.println("你愁啥----------------进入transform了--------------")
+        System.out.println("----------------进入transform--------------")
         //遍历input
         inputs.each { TransformInput input ->
             //遍历文件夹
             input.directoryInputs.each { DirectoryInput directoryInput ->
                 //注入代码
-                MyInjects.inject(directoryInput.file.absolutePath, mProject)
+                TestInjects.inject(directoryInput.file.absolutePath, mProject)
 
                 // 获取output目录
                 def dest = outputProvider.getContentLocation(directoryInput.name,
@@ -93,7 +93,7 @@ public class JavassistTransform extends Transform {
                 FileUtils.copyFile(jarInput.file, dest)
             }
         }
-        System.out.println("瞅你咋地--------------结束transform了----------------")
+        System.out.println("--------------结束transform----------------")
     }
 
 }

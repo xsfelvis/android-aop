@@ -26,9 +26,8 @@ import javax.tools.Diagnostic;
 
 
 /**
- * @author：xinyu.zhou
+ * @author：xsf
  * @version: 2018/9/18 14:15
- * @ClassName:
  * @Description: ${todo}(这里用一句话描述这个类的作用)
  */
 @AutoService(Processor.class)

@@ -1,8 +1,7 @@
-package com.zxy.aop;
+package com.xsfdev.aop;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,10 +12,9 @@ import com.app.annotation.aspect.CheckLogin;
 import com.app.aptlibrary.BindViewTools;
 
 /**
- * @author：xinyu.zhou
+ * @author：xsf
  * @version: 2018/9/13
- * @ClassName:
- * @Description: ${todo}(这里用一句话描述这个类的作用)
+ * @Description:
  */
 public class MainActivity extends AppCompatActivity {
 

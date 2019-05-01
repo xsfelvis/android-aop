@@ -1,11 +1,11 @@
-package com.zxy.aop.aspect;
+package com.xsfdev.aop.aspect;
 
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Toast;
 
-import com.zxy.aop.AopApplication;
-import com.zxy.aop.SharedPreferenceUtil;
+import com.xsfdev.aop.AopApplication;
+import com.xsfdev.aop.SharedPreferenceUtil;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -14,10 +14,9 @@ import org.aspectj.lang.annotation.Pointcut;
 
 
 /**
- * @author：xinyu.zhou
+ * @author：xsf
  * @version: 2018/9/13
- * @ClassName:
- * @Description: ${todo}(这里用一句话描述这个类的作用)
+ * @Description:
  */
 
 @Aspect

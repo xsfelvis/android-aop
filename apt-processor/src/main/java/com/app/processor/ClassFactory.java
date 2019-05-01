@@ -16,9 +16,8 @@ import javax.lang.model.element.VariableElement;
 import javax.lang.model.util.Elements;
 
 /**
- * @author：xinyu.zhou
+ * @author：xsf
  * @version: 2018/9/18 15:06
- * @ClassName:
  * @Description: ${todo}(这里用一句话描述这个类的作用)
  */
 public class ClassFactory {

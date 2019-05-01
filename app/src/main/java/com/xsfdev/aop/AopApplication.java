@@ -1,4 +1,4 @@
-package com.zxy.aop;
+package com.xsfdev.aop;
 
 import android.app.Activity;
 import android.app.Application;
@@ -7,10 +7,9 @@ import android.os.Bundle;
 import java.util.Stack;
 
 /**
- * @author：xinyu.zhou
+ * @author：xsf
  * @version: 2018/9/13
- * @ClassName:
- * @Description: ${todo}(这里用一句话描述这个类的作用)
+ * @Description:
  */
 public class AopApplication extends Application {
 
